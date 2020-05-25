@@ -48,8 +48,8 @@ public interface ToDoListDao {
      * Zmaže všetky záznamy z tabuľky to_do_sub_item_table patriacich parent úlohe.
      * @param parentId parentId
      */
-    @Query("DELETE FROM to_do_sub_item_table WHERE parentId = :parentId")
-    void deleteAllMySubItems(int parentId);
+    @Query("DELETE FROM to_do_sub_item_table WHERE parentId = :parentId AND done = 1")
+    void deleteAllMyCheckedSubItems(int parentId);
 
 
 
@@ -77,8 +77,8 @@ public interface ToDoListDao {
      /**
      * Zmaže všetky záznamy z tabuľky to_do_item_table.
      */
-    @Query("DELETE FROM to_do_item_table")
-    void deleteAllToDoItems();
+    @Query("DELETE FROM to_do_item_table WHERE done = 1")
+    void deleteAllCheckedToDoItems();
 
     /**
      * @return všetky záznamy z tabuľky to_do_item_table.

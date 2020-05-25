@@ -60,7 +60,7 @@ public class ToDoSubListViewModel extends AndroidViewModel {
      * Zmaže všetky podúlohy patriace parent úlohe s daným id.
      * @param parentId id parent úlohy.
      */
-    public void deleteAllParentsSubItems(int parentId) {
-        this.repository.deleteAllParentsSubItems(parentId);
+    public void deleteAllCheckedParentsSubItems(int parentId) {
+        this.repository.deleteAllCheckedParentsSubItems(parentId);
     }
 }

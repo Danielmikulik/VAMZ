@@ -258,12 +258,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void deleteAllAlert() {
         AlertDialog.Builder alertDialogue = new AlertDialog.Builder(MainActivity.this);
-        alertDialogue.setTitle("Delete all items").setMessage("Are you sure you want to delete all items?").setIcon(R.drawable.ic_warning);
+        alertDialogue.setTitle("Delete all checked items").setMessage("Are you sure you want to delete all checked items?").setIcon(R.drawable.ic_warning);
         alertDialogue.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                toDoListViewModel.deleteAllItems();
-                Toast.makeText(MainActivity.this, "all items deleted", Toast.LENGTH_SHORT).show();
+                toDoListViewModel.deleteAllCheckedItems();
+                Toast.makeText(MainActivity.this, "all checked items deleted", Toast.LENGTH_SHORT).show();
             }
         });
         alertDialogue.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

@@ -52,8 +52,8 @@ public class ToDoListViewModel extends AndroidViewModel {
     /**
      * Zmaže všetky úlohy v databáze.
      */
-    public void deleteAllItems() {
-        this.repository.deleteAllItems();
+    public void deleteAllCheckedItems() {
+        this.repository.deleteAllCheckedItems();
     }
 
     /**

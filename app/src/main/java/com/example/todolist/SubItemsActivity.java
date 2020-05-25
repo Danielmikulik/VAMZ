@@ -305,11 +305,11 @@ public class SubItemsActivity extends AppCompatActivity {
 
     private void deleteAllAlert() {
         AlertDialog.Builder alertDialogue = new AlertDialog.Builder(SubItemsActivity.this);
-        alertDialogue.setTitle("Delete all items").setMessage("Are you sure you want to delete all items?").setIcon(R.drawable.ic_warning);
+        alertDialogue.setTitle("Delete all checked items").setMessage("Are you sure you want to delete checked all items?").setIcon(R.drawable.ic_warning);
         alertDialogue.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                toDoSubListViewModel.deleteAllParentsSubItems(parentId);
+                toDoSubListViewModel.deleteAllCheckedParentsSubItems(parentId);
                 Toast.makeText(SubItemsActivity.this, "all items deleted", Toast.LENGTH_SHORT).show();
             }
         });

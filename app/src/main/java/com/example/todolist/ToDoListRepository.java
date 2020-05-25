@@ -59,7 +59,7 @@ public class ToDoListRepository {
     /**
      * Zmaže všetky úlohy z databázy.
      */
-    public void deleteAllItems () {
+    public void deleteAllCheckedItems () {
         new ToDoItemAsyncTask(toDoListDao, DELETE_ALL_TO_DO_ITEMS).execute();
     }
 
@@ -100,8 +100,8 @@ public class ToDoListRepository {
      * Zmaže všetky podúlohy patriace parent úlohe s daným id.
      * @param parentId id parent úlohy.
      */
-    public void deleteAllParentsSubItems(int parentId) {
-        new DeleteSubItemsAsyncTask(toDoListDao, parentId).execute();
+    public void deleteAllCheckedParentsSubItems(int parentId) {
+        new DeleteCheckedSubItemsAsyncTask(toDoListDao, parentId).execute();
     }
 
     /**
@@ -115,18 +115,18 @@ public class ToDoListRepository {
 
 
 
-    private static class DeleteSubItemsAsyncTask extends AsyncTask<ToDoSubItem, Void, Void> {
+    private static class DeleteCheckedSubItemsAsyncTask extends AsyncTask<ToDoSubItem, Void, Void> {
         private ToDoListDao toDoListDao;
         private int parentId;
 
-        private DeleteSubItemsAsyncTask(ToDoListDao toDoListDao, int parentId) {
+        private DeleteCheckedSubItemsAsyncTask(ToDoListDao toDoListDao, int parentId) {
             this.toDoListDao = toDoListDao;
             this.parentId = parentId;
         }
 
         @Override
         protected Void doInBackground(ToDoSubItem... toDoSubItems) {
-            toDoListDao.deleteAllMySubItems(this.parentId);
+            toDoListDao.deleteAllMyCheckedSubItems(this.parentId);
             return null;
         }
     }
@@ -154,7 +154,7 @@ public class ToDoListRepository {
                     toDoListDao.delete(toDoItems[0]);
                     break;
                 case DELETE_ALL_TO_DO_ITEMS:
-                    toDoListDao.deleteAllToDoItems();
+                    toDoListDao.deleteAllCheckedToDoItems();
                     break;
             }
 
