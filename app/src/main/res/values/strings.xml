@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">To Do List</string>
+
+    <string name="new_item_note">Description</string>
+    <string name="new_item_activity">Activity</string>
+    <string name="new_add_button">add</string>
+    <string name="new_cancel_button">cancel</string>
+    <string name="important">Important</string>
+    <string name="it_can_wait">It can wait</string>
+    <string name="should_be_done">Should be done</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="description">show desc</string>
+    <string name="show_text">show text</string>
+    <string name="item">Item</string>
+    <string name="item_description">description</string>
+    <string name="icon">icon</string>
+    <string name="subItem">Item</string>
+</resources>
